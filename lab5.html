@@ -1,0 +1,148 @@
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<title>Furniture Management</title>
+
+<style>
+body{
+     background-color:#424242;
+     Padding-top: 150px;
+     position:relative; 
+     left:100px;
+     color:black;
+}
+
+h1{ 
+     text-align: left;
+     vertical-align: top;
+}
+
+.furniture{
+     Display:inline-block;
+     Margin:5px;
+     Width:600px;
+     height:500px;
+     Padding-right:100px;
+}
+
+.forms{
+     Display:inline-block;
+     Margin:50px;
+     Padding-left:200px;
+}
+     
+</style>
+</head>
+
+<img align="left" class="furniture" src="/Users/ritvikatalreja/Desktop/HtmlImages/home.jpg" alt="" >
+<h1> Welcome To FurnitureNest!</h1><br>
+<form  name="register" target="_self">
+     <label for="fname">Name:</label>
+<input type="text" id="fname" name="fname" placeholder="Enter your name"><br><br>
+
+<label for="email">Email:</label>
+<input type="text" id="email" name="email" placeholder="Enter your email id"><br><br>
+
+<label for="Contact">Phone:</label>
+<input type="integer" id="Contact" name="Contact" placeholder="Enter your contact number"><br><br>
+
+<label for="password">Password:<span></span></label>
+<input type="password" id ="pswd" name="pswd" placeholder="Password" /><br><br>
+                
+<label for="payment">Payment Mode:</label><br>
+<input type="radio" id="COD" name="payment">
+<span id="cod">COD</span>
+<input type="radio" id="Online Payment" name="payment">
+<span id="online payment">Online Payment</span><br><br>
+
+<label for="register_states">Select State: </lablel><select name="state" id="register_states">
+<option value="Karnataka">Karnataka</option>  
+<option value="Rajasthan">Rajasthan</option>  
+<option value="Maharashtra">Maharashtra</option>  
+<option value="Gujarat">Gujarat</option>  
+<option value="Other">Other</option>
+</select> <br><br>
+
+
+                <p><input type="checkbox" name="terms"> I accept the <u>Terms and Conditions</u></p>
+                <br>
+                <button type="submit" name="validate" value="validate" onclick="validateForm()">Submit</button>
+
+               </form>
+             </div>
+                <script>
+
+               function validateForm()
+               {
+
+                let x = document.forms["register"]["fname"].value;
+                if (x == "") {
+                alert("First Name cannot be empty");
+                return false;
+                }
+
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                let email = document.forms["register"]["email"].value;
+
+                if(!email.match(mailformat))
+                {
+                alert("You have entered an invalid email address!");
+                return false;
+                }
+
+
+                var phoneno = /^\d{10}$/;
+                let phone = document.forms["register"]["Contact"].value;
+
+                if(!phone.match(phoneno))
+                {
+                alert("Phone number must be of 10 digits");
+                return false;
+                }
+
+                 var pw = document.getElementById("pswd").value;
+                 var cpw = document.getElementById("cpswd").value;
+
+                   //check empty password field
+                 if(pw == "") {
+                   alert ("Password Cannot be Blank!"); 
+                   return false;
+                   }
+                 
+                 //minimum password length validation
+                 else if(pw.length < 8) {
+                   alert ("Password Length is too short!");
+                   return false
+                   }
+
+                 //maximum length of password validation
+                 else if(pw.length > 15) {
+                   alert("Password length must not exceed 15 characters");
+                   return false;
+                 }
+                 else if(cpw != pw){
+                   alert("Passwords Do Not Match!");
+                   return false;
+                 }
+
+                 else if(!register.terms.checked) {
+                   alert("Please indicate that you accept the Terms and Conditions");
+                   register.terms.focus();
+                   return false;
+               }
+
+                 else
+                 {
+                   alert("Form Submitted succesfully");
+                   location.reload();
+                 }
+
+               }
+
+               </script>
+</body>
+</html>
