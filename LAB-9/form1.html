@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            LAB:9
+        </title>
+        <style>
+            #container{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                border: 2px solid black;
+                padding: 20px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h3>LAB:9 : ENTRY FOR FURNITURENEST</h3>
+            <form action="/sign_up" method="post">
+                <label for="vid">Enter Id:&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</label>
+                <input type="text" name="vid" id="vid"><br>
+                <label for="vname">Enter The Furniture: &nbsp;  &nbsp; &nbsp;&nbsp;</label>
+                <input type="text" id="vname" name="vname"><br>
+                <label for="vspecies">Enter the Wood: &nbsp;</label>
+                <input type="text" name="vspecies" id="vspecies"><br>
+                <label for="valive">Enter the Description:&nbsp; &nbsp; &nbsp;</label>
+                <input type="text" name="valive" id="valive"><br>
+                <label for="vhabitat">Enter the Price:&nbsp; &nbsp;&nbsp; &nbsp;</label>
+                <input type="text" name="vhabitat" id="vhabitat"><br><br>
+                <input type="submit" value="Enter into the Library JSON">
+            </form>
+        </div>
+        
+    </body>
+</html>
